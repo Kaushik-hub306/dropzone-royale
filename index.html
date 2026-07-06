@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropzone Royale — browser battle royale</title>
+<meta name="description" content="An original, zero-dependency 2D browser battle royale: shrinking zone, loot, AI bots, buildable walls.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="hud">
+  <div id="statbox" class="panel">
+    <div>ALIVE <b id="alive">25</b></div>
+    <div>ELIMS <b id="kills">0</b></div>
+  </div>
+  <div id="zoneMsg"></div>
+  <div id="killfeed"></div>
+
+  <div id="vitals" class="panel">
+    <div class="bar hp"><div id="hpFill"></div><span id="hpText">100</span></div>
+    <div class="bar sh"><div id="shFill"></div><span id="shText">0</span></div>
+    <div id="matsRow">&#129521; <b id="matsVal">50</b> materials</div>
+  </div>
+
+  <div id="weaponBox" class="panel"><span id="weaponName">Fists</span></div>
+  <div id="prompt"></div>
+</div>
+
+<div id="overlay">
+  <div id="ovCard">
+    <h1 id="ovTitle">DROPZONE ROYALE</h1>
+    <p id="ovSub">25 drop in. One walks out. Outlast the Zone.</p>
+    <div id="ovControls">
+      <div><b>WASD</b> move &middot; <b>Mouse</b> aim &middot; <b>Click</b> fire</div>
+      <div><b>F</b> melee / harvest materials from trees, rocks &amp; crates</div>
+      <div><b>Q</b> or right-click &mdash; build a wall (10 materials)</div>
+      <div><b>E</b> swap weapon &middot; <b>M</b> mute &middot; <b>R</b> restart</div>
+    </div>
+    <button id="ovBtn">DROP IN</button>
+    <p id="ovFoot">An original fan-made battle royale mini-game. Not affiliated with, endorsed by, or containing assets from any commercial game.</p>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

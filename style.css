@@ -1,0 +1,84 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; background: #16241b; }
+body { font-family: 'Chakra Petch', 'Segoe UI', system-ui, sans-serif; user-select: none; -webkit-user-select: none; }
+
+#game { position: fixed; inset: 0; display: block; cursor: crosshair; }
+
+#hud { position: fixed; inset: 0; pointer-events: none; color: #fff; z-index: 5; }
+
+.panel {
+  position: absolute;
+  background: rgba(10, 16, 12, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  padding: 10px 14px;
+  backdrop-filter: blur(4px);
+}
+
+#statbox { top: 14px; left: 14px; display: flex; gap: 18px; font-size: 14px; letter-spacing: 0.08em; }
+#statbox b { color: #ffd54f; font-size: 16px; }
+
+#zoneMsg {
+  position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+  font-size: 15px; letter-spacing: 0.12em; font-weight: 700;
+  color: #d9c6ff; text-shadow: 0 0 12px rgba(150, 90, 255, 0.8);
+  white-space: nowrap;
+}
+
+#killfeed {
+  position: absolute; top: 14px; right: 14px; text-align: right;
+  font-size: 13px; color: #eee; text-shadow: 0 1px 3px #000;
+  display: flex; flex-direction: column; gap: 4px; align-items: flex-end;
+}
+#killfeed .kf {
+  background: rgba(10, 16, 12, 0.5); padding: 3px 10px;
+  border-radius: 6px; border-right: 3px solid #ff5252;
+}
+
+#vitals { left: 14px; bottom: 14px; width: 280px; display: flex; flex-direction: column; gap: 7px; }
+.bar { position: relative; height: 20px; border-radius: 6px; background: rgba(255, 255, 255, 0.12); overflow: hidden; }
+.bar div { height: 100%; width: 100%; border-radius: 6px; transition: width 0.12s linear; }
+.bar.hp div { background: linear-gradient(90deg, #66bb6a, #9ccc65); }
+.bar.sh div { background: linear-gradient(90deg, #42a5f5, #4fc3f7); }
+.bar span { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 12px; font-weight: 700; text-shadow: 0 1px 2px #000; }
+#matsRow { font-size: 13px; opacity: 0.95; }
+#matsRow b { color: #ffcc80; }
+
+#weaponBox {
+  left: 50%; bottom: 14px; transform: translateX(-50%);
+  font-size: 15px; font-weight: 700; letter-spacing: 0.06em;
+  min-width: 160px; text-align: center;
+}
+
+#prompt {
+  position: absolute; left: 50%; bottom: 66px; transform: translateX(-50%);
+  font-size: 14px; color: #ffe082; text-shadow: 0 1px 3px #000; font-weight: 700;
+  white-space: nowrap;
+}
+
+#overlay {
+  position: fixed; inset: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(8, 10, 9, 0.78);
+}
+#overlay.hidden { display: none; }
+#overlay.dim { background: rgba(8, 10, 9, 0.45); pointer-events: none; }
+#overlay.dim #ovBtn { pointer-events: auto; }
+
+#ovCard { text-align: center; color: #fff; max-width: 560px; padding: 40px; }
+#ovTitle {
+  font-size: 44px; letter-spacing: 0.1em; margin-bottom: 10px;
+  color: #ffd54f; text-shadow: 0 0 24px rgba(255, 213, 79, 0.35);
+}
+#ovSub { color: #cfd8dc; margin-bottom: 22px; font-size: 16px; }
+#ovControls { display: flex; flex-direction: column; gap: 6px; margin-bottom: 26px; color: #b0bec5; font-size: 14px; }
+#ovControls b { color: #fff; }
+#ovBtn {
+  pointer-events: auto; cursor: pointer;
+  font-family: inherit; font-size: 18px; font-weight: 700; letter-spacing: 0.12em;
+  padding: 14px 44px; border-radius: 10px; border: none;
+  background: linear-gradient(180deg, #ffd54f, #ffb300); color: #33260a;
+  box-shadow: 0 6px 24px rgba(255, 193, 7, 0.35);
+}
+#ovBtn:hover { transform: translateY(-1px); }
+#ovFoot { margin-top: 22px; font-size: 11px; color: #78909c; }
